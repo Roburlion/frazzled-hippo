@@ -6,6 +6,42 @@ This was created by using https://github.com/Roburlion/working-heroku-python-tem
 
 To complete setup, see [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python).
 
+## Installation Steps
+
+```
+python -m venv venv
+venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+**To set the app in the Heroku CLI**
+
+```
+git remote add heroku https://git.heroku.com/frazzled-hippo.git
+```
+
+Check `heroku config` and `heroku pg`.  Then run:
+
+```bash
+heroku run python manage.py migrate
+```
+
+Add the PaperTrail addon
+
+```
+heroku addons:create papertrail
+heroku addons
+heroku addons:open papertrail
+```
+
+
+
+### Next steps
+
+1. Provision db
+2. Add papertrail
+
 ## Running Locally
 
 Make sure you have Python 3.10 [installed locally](https://docs.python-guide.org/starting/installation/). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
