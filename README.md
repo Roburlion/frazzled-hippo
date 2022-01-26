@@ -1,8 +1,10 @@
 # Python: Getting Started
 
-This site is up at https://glacial-bastion-26482.herokuapp.com/
+This site is up at https://frazzled-hippo.herokuapp.com/
 
-This was created by following the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article.
+This was created by using https://github.com/Roburlion/working-heroku-python-template.git
+
+To complete setup, see [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python).
 
 ## Running Locally
 
