@@ -2,10 +2,11 @@
 <html>
 <head>
 <title>Python Getting Started on Heroku</title>
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <style type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
     .jumbotron {
         background: #532f8c;
         color: white;
@@ -49,6 +50,8 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       <li><a href="{% url 'db' %}"><span class="glyphicon glyphicon-list-alt"></span> Page View Report</a></li>
+      <li><a href="{% url 'bikini' %}"><span class="glyphicon glyphicon-list-alt"></span> Bikini Proving Grounds</a></li>
+      <li><a href="{% url 'infiltration' %}"><span class="glyphicon glyphicon-list-alt"></span> Annalyn's Infiltration</a></li>
       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-info-sign"></span> Getting Started Guides <span class="caret"></span></a><ul class="dropdown-menu" role="menu">
             <li><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby">Getting Started with Ruby on Heroku</a></li>
             <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started with Node on Heroku</a></li>

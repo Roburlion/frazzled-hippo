@@ -17,5 +17,7 @@ import hello.views
 urlpatterns = [
     path("", hello.views.index, name="index"),
     path("db/", hello.views.db, name="db"),
+    path("bikini/", hello.views.bikini, name="bikini"),
+    path("infiltration/", hello.views.infiltration, name="infiltration"),
     path("admin/", admin.site.urls),
 ]

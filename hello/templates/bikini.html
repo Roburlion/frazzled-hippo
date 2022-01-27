@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1>Welcome to the Bikini proving grounds!</h1>
+
+    <p>It is here that we will get our JavaScript on and make some DOM shit happen!</p>
+    <hr>
+    
+    <h2>Greater than 5</h2>
+    <p>Put in a string and a number where indicated.  If the number is greater than 5, the number is printed below.  If it is less than 5, the string is printed.</p>
+
+    <input type="text" name="text" id="jsin" placeholder="Enter a string">
+    <input type="number" name="number" id="jsnum" placeholder="Enter a number">
+
+    <p id="jsout"><br></p>
+
+    <p><button onclick="myFunction()">Try it</button></p>
+    <p><button onclick="myalert()">Alert</button></p>
+    <p><button onclick="scriptCheck()">Alert</button></p>
+
+    <script>
+      // alert('hello')
+      function myalert() {
+        alert("something()")
+      }
+      function myFunction() {
+        let jsnum = document.getElementById("jsnum").value
+        let jsstr = document.getElementById("jsin").value
+
+        if (jsnum > 5) {
+          document.getElementById("jsout").textContent = jsnum;
+        } else {
+          document.getElementById("jsout").textContent = jsstr;
+        }
+
+        // document.getElementById("jsout").textContent = something();
+        
+      }
+    </script>
+    
+
+
+  </div>
+{% endblock %}

@@ -27,3 +27,9 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
+
+def bikini(request):
+    return render(request, "bikini.html")
+
+def infiltration(request):
+    return render(request, "infiltration.html")
