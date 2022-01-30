@@ -33,3 +33,6 @@ def bikini(request):
 
 def infiltration(request):
     return render(request, "infiltration.html")
+
+def grid(request):
+    return render(request, "grid.html")

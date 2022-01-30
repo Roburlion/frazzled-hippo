@@ -19,5 +19,6 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("bikini/", hello.views.bikini, name="bikini"),
     path("infiltration/", hello.views.infiltration, name="infiltration"),
+    path("grid/", hello.views.grid, name="grid"),
     path("admin/", admin.site.urls),
 ]

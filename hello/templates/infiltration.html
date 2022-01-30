@@ -1,142 +1,69 @@
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+<script src="{% static 'script/infiltration.js' %}" defer></script>
+<link rel="stylesheet" type="text/css" href="{% static 'style/infiltration.css' %}"/>
+{% endblock %}
 
 {% block content %}
+<div class="container">
+    <div id="instruction">
+        <section class="instructions c-textual-content --large px-20 lg:px-32 py-20 lg:py-24">
+            <h1>Annalyn's Infiltration</h1>
+            <hr>
+            <h2>Instructions</h2>
+            <p>The game's main character is Annalyn, a brave girl with a fierce and loyal pet dog. Unfortunately, disaster strikes, as her best friend was kidnapped while searching for berries in the forest. Annalyn will try to find and free her best friend, optionally taking her dog with her on this quest.</p>
+            <p>After some time spent following her best friend's trail, she finds the camp in which her best friend is imprisoned. It turns out there are two kidnappers: a mighty knight and a cunning archer.</p>
+            <p>Having found the kidnappers, Annalyn considers which of the following actions she can engage in:</p>
+            <ul>
+                <li><em>Fast attack</em>: a fast attack can be made if the <strong>knight</strong> is <strong><em>sleeping</em></strong>, as it takes time for him to get his armor on, so he will be vulnerable.</li>
+                <li><em>Spy</em>: the group can be spied upon if <strong>at least one</strong> of them is <strong><em>awake</em></strong>. Otherwise, spying is a waste of time.</li>
+                <li><em>Signal prisoner</em>: the prisoner can be signalled using bird sounds if the <strong>prisoner</strong> is <strong><em>awake</em></strong> and the <strong>archer</strong> is <strong><em>sleeping</em></strong>, as archers are trained in bird signaling so they could intercept the message.</li>
+                <li><em>Free prisoner</em>: Annalyn can try sneaking into the camp to free the prisoner. This is a risky thing to do and can only succeed in one of two ways:
+                    <ul>
+                        <li>If Annalyn has her pet dog with her she can rescue the prisoner if the <strong>archer</strong> is <strong><em>asleep</em></strong>. The knight is scared of the dog and the archer will not have time to get ready before Annalyn and the prisoner can escape.</li>
+                        <li>If Annalyn does not have her dog then she and the prisoner must be very sneaky! Annalyn can free the prisoner if the <strong>prisoner</strong> is <strong><em>awake</em></strong> and the <strong>knight</strong> and <strong>archer</strong> are both <strong><em>sleeping</em></strong>, but if the <strong>prisoner</strong> is <strong><em>sleeping</em></strong> they can't be rescued: the prisoner would be startled by Annalyn's sudden appearance and wake up the knight and archer.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Use the selectors below to represent different scenarios and then click the the <strong>Action Checker</strong> below to see what her options are.</p>
+        </section>
+    </div>
+    <hr>
+    
+    <h2>Play the Game!</h2>
+    
     <div class="container">
-        <div id="instruction">
-            <section class="instructions c-textual-content --large px-20 lg:px-32 py-20 lg:py-24">
-                <h1>Annalyn's Infiltration</h1>
-                <hr>
-                <h2>Instructions</h2>
-                <p>The game's main character is Annalyn, a brave girl with a fierce and loyal pet dog.
-                Unfortunately, disaster strikes, as her best friend was kidnapped while searching for berries in the forest.
-                Annalyn will try to find and free her best friend, optionally taking her dog with her on this quest.</p>
-                <p>After some time spent following her best friend's trail, she finds the camp in which her best friend is imprisoned.
-                It turns out there are two kidnappers: a mighty knight and a cunning archer.</p>
-                <p>Having found the kidnappers, Annalyn considers which of the following actions she can engage in:</p>
-                <ul>
-                    <li><em>Fast attack</em>: a fast attack can be made if the <strong>knight</strong> is <strong><em>sleeping</em></strong>, as it takes time for him to get his armor on, so he will be vulnerable.</li>
-                    <li><em>Spy</em>: the group can be spied upon if <strong>at least one</strong> of them is <strong><em>awake</em></strong>. Otherwise, spying is a waste of time.</li>
-                    <li><em>Signal prisoner</em>: the prisoner can be signalled using bird sounds if the <strong>prisoner</strong> is <strong><em>awake</em></strong> and the <strong>archer</strong> is <strong><em>sleeping</em></strong>, as archers are trained in bird signaling so they could intercept the message.</li>
-                    <li><em>Free prisoner</em>: Annalyn can try sneaking into the camp to free the prisoner. This is a risky thing to do and can only succeed in one of two ways:
-                        <ul>
-                            <li>If Annalyn has her pet dog with her she can rescue the prisoner if the <strong>archer</strong> is strong><em>asleep</em></strong>. The knight is scared of the dog and the archer will not have time to get ready before Annalyn and the prisoner can escape.</li>
-                            <li>If Annalyn does not have her dog then she and the prisoner must be very sneaky! Annalyn can free the prisoner if the <strong>prisoner</strong> is <strong><em>awake</em></strong> and the <strong>knight</strong> and <strong>archer</strong> are both <strong><em>sleeping</em></strong>, but if the <strong>prisoner</strong> is <strong><em>sleeping</em></strong> they can't be rescued: the prisoner would be startled by Annalyn's sudden appearance and wake up the knight and archer.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>Use the selectors below to represent different scenarios and then click the the <strong>Action Checker</strong> below to see what her options are.</p>
-            </section>
-        </div>
-        <hr>
-        
-        <h2>Play the Game</h2>
-
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <label for="cars">The Knight is awake:</label>
-                    <select id="knightIsAwake">
-                        <option value="1">True</option>
-                        <option value="">False</option>
-                    </select><br>
-                    <label for="cars">The Archer is awake:</label>
-                    <select id="archerIsAwake">
-                        <option value="1">True</option>
-                        <option value="">False</option>
-                    </select><br>
-                    <label for="cars">The Prisoner is awake:</label>
-                    <select id="prisonerIsAwake">
-                        <option value="1">True</option>
-                        <option value="">False</option>
-                    </select><br>
-                    <label for="cars">The Dog is present:</label>
-                    <select id="petDogIsPresent">
+        <div id="game">
+            <div class="col">
+                <label for="cars">The Knight is awake:</label>
+                <select id="knightIsAwake">
                     <option value="1">True</option>
                     <option value="">False</option>
-                    </select><br>
-                </div>
-                <div class="col">
-                    <ul id="options"></ul>
-                    <button onclick="myFunction()">Action Checker</button>
-                </div>
+                </select><br>
+                <label for="cars">The Archer is awake:</label>
+                <select id="archerIsAwake">
+                    <option value="1">True</option>
+                    <option value="">False</option>
+                </select><br>
+                <label for="cars">The Prisoner is awake:</label>
+                <select id="prisonerIsAwake">
+                    <option value="1">True</option>
+                    <option value="">False</option>
+                </select><br>
+                <label for="cars">The Dog is present:</label>
+                <select id="petDogIsPresent">
+                    <option value="1">True</option>
+                    <option value="">False</option>
+                </select><br>
+            </div>
+            
+            <div class="col"><button onclick="myFunction()">>> Action Checker >></button></div>
+
+            <div class="col">
+                <ul id="options"></ul>
             </div>
         </div>
-        <script>
-            
-            function myFunction() {
-                
-                deleteListItems()
-                
-                let knightIsAwake = document.getElementById("knightIsAwake").value
-                let archerIsAwake = document.getElementById("archerIsAwake").value
-                let prisonerIsAwake = document.getElementById("prisonerIsAwake").value
-                let petDogIsPresent = document.getElementById("petDogIsPresent").value
-                
-                const options = []
-                
-                if(canExecuteFastAttack(knightIsAwake)){
-                    options.push("You can execute a FAST ATTACK");
-                }
-                if(canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake)){
-                    options.push("You can SPY");
-                }
-                if(canSignalPrisoner(archerIsAwake, prisonerIsAwake)){
-                    options.push("You can SIGNAL THE PRISONER");
-                }
-                if(canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent)){
-                    options.push("You can FREE THE PRISONER");
-                }
-                
-                outputOptions(options)
-                
-            }
-
-            function deleteListItems() {
-                let collection = document.getElementsByClassName("optionListItem")
-                while (collection.length > 0) {
-                    collection.item(0).remove()
-                }
-            }
-            
-            function outputOptions(options) {
-                for (const option of options) {
-                    let li = document.createElement('li')
-                    li.innerText = option
-                    li.setAttribute('class', 'optionListItem')
-                    document.getElementById('options').append(li)
-                }
-            }
-            
-            //  * The fast attack is available when the knight is sleeping
-            function canExecuteFastAttack(knightIsAwake) {
-                return !knightIsAwake
-            }
-            
-            //  * A useful spy captures information, which they can't do if everyone's asleep.
-            function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-                return prisonerIsAwake || archerIsAwake || knightIsAwake
-            }
-            
-            //  * You'll get caught by the archer if you signal while they're awake.
-            function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-                return prisonerIsAwake && !archerIsAwake
-            }
-            
-            //  * The final stage in the plan: freeing Annalyn's best friend.
-            function canFreePrisoner(knightIsAwake, archerIsAwake, prisonerIsAwake, petDogIsPresent) {
-                // With her dog, Annalyn can rescue her friend as long as
-                // the archer is asleep -- regardless of what the other's are doing
-                const canRescueWithDog = petDogIsPresent && !archerIsAwake
-                // Without her dog, both the archer and knight need to be
-                // asleep AND her friend needs to be awake.
-                const canRescueWithoutDog = !petDogIsPresent && !archerIsAwake && !knightIsAwake && prisonerIsAwake
-                // Either work to rescue her friend
-                return canRescueWithDog || canRescueWithoutDog
-            }
-
-        </script>
-
     </div>
-
+</div>
 {% endblock %}
