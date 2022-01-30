@@ -7,12 +7,12 @@ h1 {
     display: grid;
     grid-template-columns: max-content max-content max-content;
     grid-template-rows: max-content;
+    align-items: center;
     grid-column-gap: 25px;
 }
 
-.col {
-    align-self: center;
-    height: min-content;
+footer {
+    background-color: lightgray;
+    color: gray;
     text-align: center;
-    vertical-align: middle;
 }

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+from asyncio import FastChildWatcher
 import os
 import django_heroku
 
@@ -28,7 +29,6 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com']
-
 
 # Application definition
 

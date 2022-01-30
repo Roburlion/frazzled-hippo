@@ -19,7 +19,6 @@
             border-color: blue;
             justify-self: stretch;
         }
-
     </style>
 {% endblock %}
 
@@ -27,6 +26,28 @@
 <div class="container">
     <h1>Welcome to the Grid grounds</h1>
     <hr>
+    <h2>A simple grid</h2>
+
+<pre>
+#grid1 {
+    background-color: black;
+    border-style: solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+    gap: 10px;
+}
+
+.item1 {
+    display: grid;
+    place-content: left;
+    background-color: yellow;
+    border-style: solid;
+    border-color: blue;
+    justify-self: stretch;
+}
+</pre>
+
     <div id="grid1">
         <div class="item1" id="item1-1"><p>1</p></div>
         <div class="item1" id="item1-2"><p>2</p></div>
